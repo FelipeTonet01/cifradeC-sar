@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cifra de César - Criptografia</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            width: 450px;
+        }
+        h1 {
+            color: #333;
+            font-size: 24px;
+            text-align: center;
+        }
+        label {
+            font-weight: bold;
+            display: block;
+            margin-top: 15px;
+        }
+        textarea, input {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        textarea {
+            resize: vertical;
+            height: 100px;
+        }
+        .chave-container {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin: 15px 0;
+        }
+        .chave-container input {
+            width: 60px;
+            margin: 0;
+        }
+        .botoes {
+            display: flex;
+            justify-content: space-between;
+            margin: 20px 0;
+        }
+        button {
+            padding: 12px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 14px;
+            width: 48%;
+            transition: 0.2s;
+        }
+        button:hover {
+            opacity: 0.8;
+        }
+        #btnCriptografar {
+            background-color: #4CAF50;
+            color: white;
+        }
+        #btnDescriptografar {
+            background-color: #f44336;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Cifra de César 🔐</h1>
+        
+        <!-- CAMPO 1: Texto Original -->
+        <label for="textoOriginal">Texto Original:</label>
+        <textarea id="textoOriginal" placeholder="Digite a frase original aqui..."></textarea>
+        
+        <!-- CHAVE DE DESLOCAMENTO -->
+        <div class="chave-container">
+            <label for="chave" style="margin: 0;">Chave (Deslocamento):</label>
+            <input type="number" id="chave" value="3" min="1" max="25">
+        </div>
+
+        <!-- BOTÕES -->
+        <div class="botoes">
+            <button id="btnCriptografar" onclick="executarCriptografia()">Criptografar ⬇️</button>
+            <button id="btnDescriptografar" onclick="executarDescriptografia()">Descriptografar ⬆️</button>
+        </div>
+
+        <!-- CAMPO 2: Texto Criptografado -->
+        <label for="textoCifrado">Texto Criptografado:</label>
+        <textarea id="textoCifrado" placeholder="O texto cifrado aparecerá aqui..."></textarea>
+    </div>
+
+    <!-- Chamando o arquivo de funções -->
+    <script src="script.js"></script>
+
+</body>
+</html>
